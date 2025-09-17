@@ -3,80 +3,74 @@
 <head>
   <meta charset="UTF-8">
   <title>🌿 Janus – Storico Dati Meteo</title>
+  <!-- Stili base -->
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
   <style>
     body { font-family: Arial, sans-serif; margin: 20px; background: #f5f5f5; }
     h1 { color: #2c3e50; }
-    table { border-collapse: collapse; width: 100%; margin-top: 20px; background: #fff; }
-    th, td { border: 1px solid #ccc; padding: 6px; text-align: center; }
-    th { background: #e0e0e0; cursor: pointer; }
-    #searchBox { margin-top: 10px; padding: 6px; width: 250px; }
+    .btn { display: inline-block; margin: 10px 5px; padding: 8px 12px; background: #2c3e50; color: white; text-decoration: none; border-radius: 6px; }
+    .btn:hover { background: #34495e; }
+    table.dataTable thead th { background: #e0e0e0; }
   </style>
 </head>
 <body>
   <h1>🌿 Janus – Storico Dati Meteo</h1>
   <p>
-    <a href="index.html">⬅️ Torna alla Dashboard</a>
+    <a class="btn" href="index.html">⬅️ Torna alla Dashboard</a>
+    <a class="btn" href="data/storico.csv">📜 Scarica CSV</a>
   </p>
 
-  <input type="text" id="searchBox" placeholder="🔍 Cerca una stazione...">
-
-  <table id="storicoTable">
+  <table id="storicoTable" class="display" style="width:100%">
     <thead>
       <tr>
-        <th onclick="sortTable(0)">Data/Ora</th>
-        <th onclick="sortTable(1)">Stazione</th>
-        <th onclick="sortTable(2)">Temperatura (°C)</th>
-        <th onclick="sortTable(3)">Umidità (%)</th>
-        <th onclick="sortTable(4)">Dew Point (°C)</th>
-        <th onclick="sortTable(5)">Pressione (hPa)</th>
-        <th onclick="sortTable(6)">Vento (km/h)</th>
-        <th onclick="sortTable(7)">Direzione</th>
-        <th onclick="sortTable(8)">Pioggia (mm/h)</th>
-        <th onclick="sortTable(9)">Totale Giorno (mm)</th>
+        <th>Data/Ora</th>
+        <th>Stazione</th>
+        <th>Temperatura (°C)</th>
+        <th>Umidità (%)</th>
+        <th>Dew Point (°C)</th>
+        <th>Pressione (hPa)</th>
+        <th>Vento (km/h)</th>
+        <th>Direzione</th>
+        <th>Pioggia (mm/h)</th>
+        <th>Totale Giorno (mm)</th>
       </tr>
     </thead>
     <tbody></tbody>
   </table>
+
+  <!-- Dipendenze DataTables -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
 
   <script>
     async function loadCSV() {
       const resp = await fetch("data/storico.csv");
       const text = await resp.text();
       const rows = text.trim().split("\n").map(r => r.split(","));
-      const tbody = document.querySelector("#storicoTable tbody");
-      tbody.innerHTML = "";
 
+      const data = [];
       for (let i = 1; i < rows.length; i++) {
-        const row = rows[i];
-        const tr = document.createElement("tr");
-        row.forEach(cell => {
-          const td = document.createElement("td");
-          td.textContent = cell || "--";
-          tr.appendChild(td);
-        });
-        tbody.appendChild(tr);
+        data.push(rows[i]);
       }
-    }
 
-    function sortTable(n) {
-      const table = document.getElementById("storicoTable");
-      let rows = Array.from(table.rows).slice(1);
-      let asc = table.getAttribute("data-sort") !== "asc";
-      rows.sort((a, b) => {
-        let x = a.cells[n].innerText.toLowerCase();
-        let y = b.cells[n].innerText.toLowerCase();
-        return (asc ? x > y : x < y) ? 1 : -1;
+      $("#storicoTable").DataTable({
+        data: data,
+        columns: [
+          { title: "Data/Ora" },
+          { title: "Stazione" },
+          { title: "Temperatura (°C)" },
+          { title: "Umidità (%)" },
+          { title: "Dew Point (°C)" },
+          { title: "Pressione (hPa)" },
+          { title: "Vento (km/h)" },
+          { title: "Direzione" },
+          { title: "Pioggia (mm/h)" },
+          { title: "Totale Giorno (mm)" }
+        ],
+        order: [[0, "desc"]],
+        pageLength: 25
       });
-      rows.forEach(r => table.tBodies[0].appendChild(r));
-      table.setAttribute("data-sort", asc ? "asc" : "desc");
     }
-
-    document.getElementById("searchBox").addEventListener("input", function () {
-      let filter = this.value.toLowerCase();
-      document.querySelectorAll("#storicoTable tbody tr").forEach(tr => {
-        tr.style.display = tr.innerText.toLowerCase().includes(filter) ? "" : "none";
-      });
-    });
 
     loadCSV();
   </script>
