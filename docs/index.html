@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Janus – Meteo Vigneto</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; background: #f9f9f9; }
+    h1, h2 { text-align: center; }
+    .layer { margin-top: 40px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+    th, td { border: 1px solid #ccc; padding: 8px; font-size: 14px; }
+    th { background: #eee; }
+    .station-name { font-weight: bold; }
+    .raw { font-size: 12px; color: #555; }
+  </style>
+</head>
+<body>
+  <h1>🌿 Janus – Monitoraggio Meteo</h1>
+  <p style="text-align:center;">Ultimo aggiornamento: <span id="generated_at">--</span></p>
+
+  <div class="layer">
+    <h2>Inner Layer</h2>
+    <table id="inner-table">
+      <thead>
+        <tr>
+          <th>Stazione</th>
+          <th>Ultimo aggiornamento</th>
+          <th>Dati grezzi</th>
+          <th>Fonte</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <div class="layer">
+    <h2>Outer Layer</h2>
+    <table id="outer-table">
+      <thead>
+        <tr>
+          <th>Stazione</th>
+          <th>Ultimo aggiornamento</th>
+          <th>Dati grezzi</th>
+          <th>Fonte</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <script>
+    async function loadData() {
+      const response = await fetch("data/dati.json");
+      const json = await response.json();
+
+      document.getElementById("generated_at").textContent = json.generated_at;
+
+      // Definizione dei layer
+      const innerStations = [
+        "grezzana", "marzana", "torricelle",
+        "gazzego", "belvedere", "biancospini",
+        "montorio", "antonio_legnago", "borgo_venezia", "forte_san_mattia"
+      ];
+      const outerStations = []; // Per ora vuoto, ci aggiungerai tu le stazioni viola
+
+      function fillTable(stations, tableId) {
+        const tbody = document.querySelector(`#${tableId} tbody`);
+        tbody.innerHTML = "";
+        stations.forEach(key => {
+          const st = json.stations[key];
+          if (!st) return;
+          const tr = document.createElement("tr");
+          tr.innerHTML = `
+            <td class="station-name">${st.meta.name}</td>
+            <td>${st.data.fetched_at}</td>
+            <td class="raw">${st.data.raw_row ? JSON.stringify(st.data.raw_row) : st.data.raw_preview}</td>
+            <td><a href="${st.data.url}" target="_blank">Vai</a></td>
+          `;
+          tbody.appendChild(tr);
+        });
+      }
+
+      fillTable(innerStations, "inner-table");
+      fillTable(outerStations, "outer-table");
+    }
+
+    loadData();
+  </script>
+</body>
+</html>
