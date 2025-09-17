@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>🌿 Janus – Storico Dati Meteo</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; background: #f5f5f5; }
+    h1 { color: #2c3e50; }
+    table { border-collapse: collapse; width: 100%; margin-top: 20px; background: #fff; }
+    th, td { border: 1px solid #ccc; padding: 6px; text-align: center; }
+    th { background: #e0e0e0; cursor: pointer; }
+    #searchBox { margin-top: 10px; padding: 6px; width: 250px; }
+  </style>
+</head>
+<body>
+  <h1>🌿 Janus – Storico Dati Meteo</h1>
+  <p>
+    <a href="index.html">⬅️ Torna alla Dashboard</a>
+  </p>
+
+  <input type="text" id="searchBox" placeholder="🔍 Cerca una stazione...">
+
+  <table id="storicoTable">
+    <thead>
+      <tr>
+        <th onclick="sortTable(0)">Data/Ora</th>
+        <th onclick="sortTable(1)">Stazione</th>
+        <th onclick="sortTable(2)">Temperatura (°C)</th>
+        <th onclick="sortTable(3)">Umidità (%)</th>
+        <th onclick="sortTable(4)">Dew Point (°C)</th>
+        <th onclick="sortTable(5)">Pressione (hPa)</th>
+        <th onclick="sortTable(6)">Vento (km/h)</th>
+        <th onclick="sortTable(7)">Direzione</th>
+        <th onclick="sortTable(8)">Pioggia (mm/h)</th>
+        <th onclick="sortTable(9)">Totale Giorno (mm)</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script>
+    async function loadCSV() {
+      const resp = await fetch("data/storico.csv");
+      const text = await resp.text();
+      const rows = text.trim().split("\n").map(r => r.split(","));
+      const tbody = document.querySelector("#storicoTable tbody");
+      tbody.innerHTML = "";
+
+      for (let i = 1; i < rows.length; i++) {
+        const row = rows[i];
+        const tr = document.createElement("tr");
+        row.forEach(cell => {
+          const td = document.createElement("td");
+          td.textContent = cell || "--";
+          tr.appendChild(td);
+        });
+        tbody.appendChild(tr);
+      }
+    }
+
+    function sortTable(n) {
+      const table = document.getElementById("storicoTable");
+      let rows = Array.from(table.rows).slice(1);
+      let asc = table.getAttribute("data-sort") !== "asc";
+      rows.sort((a, b) => {
+        let x = a.cells[n].innerText.toLowerCase();
+        let y = b.cells[n].innerText.toLowerCase();
+        return (asc ? x > y : x < y) ? 1 : -1;
+      });
+      rows.forEach(r => table.tBodies[0].appendChild(r));
+      table.setAttribute("data-sort", asc ? "asc" : "desc");
+    }
+
+    document.getElementById("searchBox").addEventListener("input", function () {
+      let filter = this.value.toLowerCase();
+      document.querySelectorAll("#storicoTable tbody tr").forEach(tr => {
+        tr.style.display = tr.innerText.toLowerCase().includes(filter) ? "" : "none";
+      });
+    });
+
+    loadCSV();
+  </script>
+</body>
+</html>
