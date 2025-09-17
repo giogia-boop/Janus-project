@@ -1,90 +1,163 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <title>Janus – Meteo Vigneto</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Janus – Monitoraggio Meteo</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 20px; background: #f9f9f9; }
-    h1, h2 { text-align: center; }
-    .layer { margin-top: 40px; }
-    table { width: 100%; border-collapse: collapse; margin-top: 15px; }
-    th, td { border: 1px solid #ccc; padding: 8px; font-size: 14px; }
-    th { background: #eee; }
-    .station-name { font-weight: bold; }
-    .raw { font-size: 12px; color: #555; }
+    :root{--bg:#f7f8fa;--card:#fff;--muted:#666;--accent:#2b6cb0}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial; margin:16px; background:var(--bg); color:#111}
+    header{display:flex;flex-direction:column;gap:6px;align-items:center;margin-bottom:18px}
+    h1{margin:0;font-size:20px}
+    .meta{font-size:13px;color:var(--muted)}
+    .controls{display:flex;gap:8px;flex-wrap:wrap;align-items:center;justify-content:center;margin:12px 0}
+    .btn{background:var(--accent);color:white;padding:6px 10px;border-radius:6px;border:none;cursor:pointer}
+    .link{background:#fff;border:1px solid #ddd;padding:6px 8px;border-radius:6px;text-decoration:none;color:#111}
+    .container{max-width:1100px;margin:0 auto}
+    .layer{margin-top:24px;background:var(--card);padding:12px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,0.06)}
+    .layer h2{margin:0 0 8px 0;font-size:16px}
+    table{width:100%;border-collapse:collapse;font-size:13px}
+    th,td{padding:8px;border-bottom:1px solid #eee;text-align:center}
+    th{background:#fafafa;position:sticky;top:0;z-index:1}
+    td.station{font-weight:600;text-align:left}
+    td.small{font-size:12px;color:var(--muted)}
+    .nowrap{white-space:nowrap}
+    @media (max-width:800px){
+      th,td{font-size:12px;padding:6px}
+      .controls{flex-direction:column}
+    }
   </style>
 </head>
 <body>
-  <h1>🌿 Janus – Monitoraggio Meteo</h1>
-  <p style="text-align:center;">Ultimo aggiornamento: <span id="generated_at">--</span></p>
+  <div class="container">
+    <header>
+      <h1>🌿 Janus – Monitoraggio Meteo (Vigneto)</h1>
+      <div class="meta">Ultimo snapshot dataset: <span id="generated_at">--</span> — dati aggiornati automaticamente ogni 15 min</div>
 
-  <div class="layer">
-    <h2>Inner Layer</h2>
-    <table id="inner-table">
-      <thead>
-        <tr>
-          <th>Stazione</th>
-          <th>Ultimo aggiornamento</th>
-          <th>Dati grezzi</th>
-          <th>Fonte</th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-  </div>
+      <div class="controls">
+        <a class="link" href="data/dati.json" target="_blank">Apri dati.json</a>
+        <a class="link" href="data/storico.csv" target="_blank">Scarica storico.csv</a>
+        <button id="refreshBtn" class="btn">Aggiorna ora</button>
+        <div class="meta small">Se i valori sono vuoti, aspetta che il workflow GitHub Actions aggiorni <em>dati.json</em>.</div>
+      </div>
+    </header>
 
-  <div class="layer">
-    <h2>Outer Layer</h2>
-    <table id="outer-table">
-      <thead>
-        <tr>
-          <th>Stazione</th>
-          <th>Ultimo aggiornamento</th>
-          <th>Dati grezzi</th>
-          <th>Fonte</th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
+    <!-- INNER -->
+    <section class="layer" id="inner-layer">
+      <h2>Inner Layer</h2>
+      <div style="overflow:auto">
+        <table id="inner-table">
+          <thead>
+            <tr>
+              <th>Stazione</th>
+              <th>Ultimo aggiornamento</th>
+              <th>Temperatura</th>
+              <th>Umidità</th>
+              <th>Dew point</th>
+              <th>Pressione (hPa)</th>
+              <th>Vento (km/h)</th>
+              <th>Rain rate (mm/h)</th>
+              <th>Pioggia oggi (mm)</th>
+              <th>Pioggia ieri (mm)</th>
+              <th>Fonte</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- OUTER -->
+    <section class="layer" id="outer-layer" style="margin-bottom:40px">
+      <h2>Outer Layer</h2>
+      <div style="overflow:auto">
+        <table id="outer-table">
+          <thead>
+            <tr>
+              <th>Stazione</th>
+              <th>Ultimo aggiornamento</th>
+              <th>Temperatura</th>
+              <th>Umidità</th>
+              <th>Dew point</th>
+              <th>Pressione (hPa)</th>
+              <th>Vento (km/h)</th>
+              <th>Rain rate (mm/h)</th>
+              <th>Pioggia oggi (mm)</th>
+              <th>Pioggia ieri (mm)</th>
+              <th>Fonte</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
   </div>
 
   <script>
-    async function loadData() {
-      const response = await fetch("data/dati.json");
-      const json = await response.json();
+    // Lista inner / outer (modifica se vuoi)
+    const innerStations = [
+      "grezzana","marzana","torricelle","gazzego","belvedere",
+      "biancospini","montorio","antonio_legnago","borgo_venezia","forte_san_mattia"
+    ];
+    const outerStations = []; // aggiungi qui gli id dell'outer layer quando li hai
 
-      document.getElementById("generated_at").textContent = json.generated_at;
-
-      // Definizione dei layer
-      const innerStations = [
-        "grezzana", "marzana", "torricelle",
-        "gazzego", "belvedere", "biancospini",
-        "montorio", "antonio_legnago", "borgo_venezia", "forte_san_mattia"
-      ];
-      const outerStations = []; // Per ora vuoto, ci aggiungerai tu le stazioni viola
-
-      function fillTable(stations, tableId) {
-        const tbody = document.querySelector(`#${tableId} tbody`);
-        tbody.innerHTML = "";
-        stations.forEach(key => {
-          const st = json.stations[key];
-          if (!st) return;
-          const tr = document.createElement("tr");
-          tr.innerHTML = `
-            <td class="station-name">${st.meta.name}</td>
-            <td>${st.data.fetched_at}</td>
-            <td class="raw">${st.data.raw_row ? JSON.stringify(st.data.raw_row) : st.data.raw_preview}</td>
-            <td><a href="${st.data.url}" target="_blank">Vai</a></td>
-          `;
-          tbody.appendChild(tr);
-        });
-      }
-
-      fillTable(innerStations, "inner-table");
-      fillTable(outerStations, "outer-table");
+    // helper di formato
+    function fmt(v, suffix=""){
+      if (v === undefined || v === null) return "--";
+      return (typeof v === "number" ? String(v) : v) + (suffix ? (" " + suffix) : "");
+    }
+    function fmtTime(iso){
+      if (!iso) return "--";
+      try {
+        const d = new Date(iso);
+        return d.toLocaleString("it-IT", {timeZone: "Europe/Rome"});
+      } catch(e){ return iso; }
     }
 
+    function fillTable(stKeys, tableId, json){
+      const tbody = document.querySelector(`#${tableId} tbody`);
+      tbody.innerHTML = "";
+      stKeys.forEach(key => {
+        const s = json.stations[key];
+        if (!s) return;
+        const d = s.data || {};
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+          <td class="station">${s.meta?.name || key}</td>
+          <td class="nowrap small">${fmtTime(d.fetched_at || d.timestamp || json.generated_at)}</td>
+          <td>${fmt(d.temperature, "°C")}</td>
+          <td>${fmt(d.humidity, "%")}</td>
+          <td>${fmt(d.dew_point, "°C")}</td>
+          <td>${fmt(d.pressure)}</td>
+          <td>${fmt(d.wind_speed)}</td>
+          <td>${fmt(d.rain_rate)}</td>
+          <td>${fmt(d.rain_today)}</td>
+          <td>${fmt(d.rain_yesterday)}</td>
+          <td class="small nowrap"><a href="${d.url || '#'}" target="_blank">Vai</a></td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    async function loadData(){
+      try {
+        // cachebust per forzare fresh
+        const res = await fetch("data/dati.json?v=" + Date.now());
+        const json = await res.json();
+        document.getElementById("generated_at").textContent = new Date(json.generated_at).toLocaleString("it-IT", {timeZone:"Europe/Rome"});
+        fillTable(innerStations, "inner-table", json);
+        fillTable(outerStations, "outer-table", json);
+      } catch(err){
+        console.error(err);
+        // mostra messaggio minimo
+        document.getElementById("generated_at").textContent = "Errore caricamento dati";
+      }
+    }
+
+    // auto refresh ogni 5 minuti; bottone refresh immediato
+    document.getElementById("refreshBtn").addEventListener("click", loadData);
     loadData();
+    setInterval(loadData, 5 * 60 * 1000);
   </script>
 </body>
 </html>
