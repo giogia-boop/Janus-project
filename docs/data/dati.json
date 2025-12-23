@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-12-23T21:40:05.988171+00:00",
+  "generated_at": "2025-12-23T21:47:05.538433+00:00",
   "interval_minutes": 15,
   "stations": {
     "grezzana": {
@@ -8,7 +8,7 @@
       },
       "data": {
         "error": "HTTPSConnectionPool(host='wwwold.arpa.veneto.it', port=443): Max retries exceeded with url: /bollettini/meteo/h24/img12/Mappa_TEMP.htm?x=24060 (Caused by NameResolutionError(\"HTTPSConnection(host='wwwold.arpa.veneto.it', port=443): Failed to resolve 'wwwold.arpa.veneto.it' ([Errno -2] Name or service not known)\"))",
-        "fetched_at": "2025-12-23T21:40:06.481064+00:00",
+        "fetched_at": "2025-12-23T21:47:05.977192+00:00",
         "url": "https://wwwold.arpa.veneto.it/bollettini/meteo/h24/img12/Mappa_TEMP.htm?x=24060"
       }
     },
@@ -20,7 +20,7 @@
         "raw_row": {
           "col0": "+ 8°COsservatorio Meteorologico diMarzana di Valpantena (VR)HOME PAGEDATI COMPLETIGRAFICIARCHIVIO DATIREPORT MENSILIPREVISIONIMETEO-PROJECT"
         },
-        "fetched_at": "2025-12-23T21:40:09.514456+00:00",
+        "fetched_at": "2025-12-23T21:47:09.011906+00:00",
         "url": "https://stazioni.meteoproject.it/dati/marzana/"
       }
     },
@@ -32,7 +32,7 @@
         "raw_row": {
           "col0": "+ 9°COsservatorio Meteorologico diVerona - Torricelle (VR)HOME PAGEDATI COMPLETIGRAFICIARCHIVIO DATIREPORT MENSILIPREVISIONIMETEO-PROJECT"
         },
-        "fetched_at": "2025-12-23T21:40:12.570450+00:00",
+        "fetched_at": "2025-12-23T21:47:12.083958+00:00",
         "url": "https://stazioni.meteoproject.it/dati/torricelle/"
       }
     },
@@ -41,8 +41,8 @@
         "name": "Contrada Gazzego"
       },
       "data": {
-        "error": "HTTPSConnectionPool(host='evrgreen.it', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='evrgreen.it', port=443) at 0x7f7e5d1b1390>, 'Connection to evrgreen.it timed out. (connect timeout=12)'))",
-        "fetched_at": "2025-12-23T21:40:26.556643+00:00",
+        "error": "HTTPSConnectionPool(host='evrgreen.it', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='evrgreen.it', port=443) at 0x7f266dd4c250>, 'Connection to evrgreen.it timed out. (connect timeout=12)'))",
+        "fetched_at": "2025-12-23T21:47:26.179649+00:00",
         "url": "https://evrgreen.it/"
       }
     },
@@ -51,8 +51,8 @@
         "name": "Via Belvedere"
       },
       "data": {
-        "error": "HTTPSConnectionPool(host='evrgreen.it', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='evrgreen.it', port=443) at 0x7f7e5d1b23d0>, 'Connection to evrgreen.it timed out. (connect timeout=12)'))",
-        "fetched_at": "2025-12-23T21:40:40.590970+00:00",
+        "error": "HTTPSConnectionPool(host='evrgreen.it', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='evrgreen.it', port=443) at 0x7f266dd4d4d0>, 'Connection to evrgreen.it timed out. (connect timeout=12)'))",
+        "fetched_at": "2025-12-23T21:47:40.160068+00:00",
         "url": "https://evrgreen.it/"
       }
     },
@@ -61,8 +61,8 @@
         "name": "Via dei Biancospini"
       },
       "data": {
-        "error": "HTTPSConnectionPool(host='evrgreen.it', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='evrgreen.it', port=443) at 0x7f7e5d1b0950>, 'Connection to evrgreen.it timed out. (connect timeout=12)'))",
-        "fetched_at": "2025-12-23T21:40:54.107070+00:00",
+        "error": "HTTPSConnectionPool(host='evrgreen.it', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='evrgreen.it', port=443) at 0x7f266de53890>, 'Connection to evrgreen.it timed out. (connect timeout=12)'))",
+        "fetched_at": "2025-12-23T21:47:54.062243+00:00",
         "url": "https://evrgreen.it/"
       }
     },
@@ -71,8 +71,8 @@
         "name": "Montorio"
       },
       "data": {
-        "raw_preview": "Stazione Meteo di Montorio Veronese STAZIONE METEO Montorio Veronese Stazione meteo MAPPA STAZIONI METEO4 PREVISIONI METEOBLUE WEBCAM TIMELAPSE Informazioni Stazione meteo Adesso Dati attuali Viste interattive Grafico interattivo Tabelle interattive Intervallo periodo Rapporti Rapporti Tendenze Tendenze Cronologia MAPPA STAZIONI METEO4 PREVISIONI METEOBLUE WEBCAM TIMELAPSE Informazioni About Montorio Stazione meteo di montorio veronese Davis vantage vue Collegamenti 23/12/2025 22.40 © 2025 Meteotemplate meteotemplate.com Meteotemplate 19.0 Cranberry ONLINE Lingua Icone Temperatura Umidità Pres",
-        "fetched_at": "2025-12-23T21:40:58.563653+00:00",
+        "raw_preview": "Stazione Meteo di Montorio Veronese STAZIONE METEO Montorio Veronese Stazione meteo MAPPA STAZIONI METEO4 PREVISIONI METEOBLUE WEBCAM TIMELAPSE Informazioni Stazione meteo Adesso Dati attuali Viste interattive Grafico interattivo Tabelle interattive Intervallo periodo Rapporti Rapporti Tendenze Tendenze Cronologia MAPPA STAZIONI METEO4 PREVISIONI METEOBLUE WEBCAM TIMELAPSE Informazioni About Montorio Stazione meteo di montorio veronese Davis vantage vue Collegamenti 23/12/2025 22.47 © 2025 Meteotemplate meteotemplate.com Meteotemplate 19.0 Cranberry ONLINE Lingua Icone Temperatura Umidità Pres",
+        "fetched_at": "2025-12-23T21:47:58.773971+00:00",
         "url": "https://www.montorioveronese.it/template/indexDesktop.php"
       }
     },
@@ -81,8 +81,8 @@
         "name": "Via Antonio da Legnago"
       },
       "data": {
-        "error": "HTTPSConnectionPool(host='evrgreen.it', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='evrgreen.it', port=443) at 0x7f7e5d1b3a50>, 'Connection to evrgreen.it timed out. (connect timeout=12)'))",
-        "fetched_at": "2025-12-23T21:41:12.079750+00:00",
+        "error": "HTTPSConnectionPool(host='evrgreen.it', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='evrgreen.it', port=443) at 0x7f266dd4ed10>, 'Connection to evrgreen.it timed out. (connect timeout=12)'))",
+        "fetched_at": "2025-12-23T21:48:12.289874+00:00",
         "url": "https://evrgreen.it/"
       }
     },
@@ -92,7 +92,7 @@
       },
       "data": {
         "error": "403 Client Error: Forbidden for url: https://www.meteonlinebvvr.altervista.org/",
-        "fetched_at": "2025-12-23T21:41:14.366452+00:00",
+        "fetched_at": "2025-12-23T21:48:14.306021+00:00",
         "url": "https://www.meteonlinebvvr.altervista.org/"
       }
     },
@@ -101,8 +101,8 @@
         "name": "Forte San Mattia"
       },
       "data": {
-        "error": "HTTPSConnectionPool(host='evrgreen.it', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='evrgreen.it', port=443) at 0x7f7e5cb08190>, 'Connection to evrgreen.it timed out. (connect timeout=12)'))",
-        "fetched_at": "2025-12-23T21:41:28.416367+00:00",
+        "error": "HTTPSConnectionPool(host='evrgreen.it', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='evrgreen.it', port=443) at 0x7f266d7034d0>, 'Connection to evrgreen.it timed out. (connect timeout=12)'))",
+        "fetched_at": "2025-12-23T21:48:28.226442+00:00",
         "url": "https://evrgreen.it/"
       }
     }
