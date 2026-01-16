@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-01-16T15:43:12.826798+00:00",
+  "generated_at": "2026-01-16T15:54:48.877736+00:00",
   "interval_minutes": 15,
   "stations": {
     "grezzana": {
@@ -8,7 +8,7 @@
       },
       "data": {
         "error": "HTTPSConnectionPool(host='wwwold.arpa.veneto.it', port=443): Max retries exceeded with url: /bollettini/meteo/h24/img12/Mappa_TEMP.htm?x=24060 (Caused by NameResolutionError(\"HTTPSConnection(host='wwwold.arpa.veneto.it', port=443): Failed to resolve 'wwwold.arpa.veneto.it' ([Errno -2] Name or service not known)\"))",
-        "fetched_at": "2026-01-16T15:43:13.504576+00:00",
+        "fetched_at": "2026-01-16T15:54:50.102134+00:00",
         "url": "https://wwwold.arpa.veneto.it/bollettini/meteo/h24/img12/Mappa_TEMP.htm?x=24060"
       }
     },
@@ -20,7 +20,7 @@
         "raw_row": {
           "col0": "+ 8°COsservatorio Meteorologico diMarzana di Valpantena (VR)HOME PAGEDATI COMPLETIGRAFICIARCHIVIO DATIREPORT MENSILIPREVISIONIMETEO-PROJECT"
         },
-        "fetched_at": "2026-01-16T15:43:16.694836+00:00",
+        "fetched_at": "2026-01-16T15:54:53.228957+00:00",
         "url": "https://stazioni.meteoproject.it/dati/marzana/"
       }
     },
@@ -32,7 +32,7 @@
         "raw_row": {
           "col0": "+ 6°COsservatorio Meteorologico diVerona - Torricelle (VR)HOME PAGEDATI COMPLETIGRAFICIARCHIVIO DATIREPORT MENSILIPREVISIONIMETEO-PROJECT"
         },
-        "fetched_at": "2026-01-16T15:43:19.355871+00:00",
+        "fetched_at": "2026-01-16T15:54:56.371052+00:00",
         "url": "https://stazioni.meteoproject.it/dati/torricelle/"
       }
     },
@@ -41,8 +41,8 @@
         "name": "Contrada Gazzego"
       },
       "data": {
-        "error": "HTTPSConnectionPool(host='evrgreen.it', port=443): Read timed out. (read timeout=12)",
-        "fetched_at": "2026-01-16T15:43:33.562336+00:00",
+        "raw_preview": "Home - èVRgreen èVRgreen Progetto Chi siamo èVRgreen Week 2025 News Press Contatti Verso una Verona più Verde e Sostenibile Scopri il progetto èVRgreen Week Verso una Verona più Verde e Sostenibile Scopri il progetto èVRgreen Week èVRgreen è un progetto dell’ Università di Verona in collaborazione con il Comune di Verona e l’ Università di Padova per il monitoraggio e l’implementazione del capitale naturale della città. Il progetto èVRgreen mira a trasformare Verona in una città più verde, ricca di biodiversità e con miglioramenti nel benessere psicofisico dei cittadini. Questa iniziativa è pr",
+        "fetched_at": "2026-01-16T15:55:02.374557+00:00",
         "url": "https://evrgreen.it/"
       }
     },
@@ -52,7 +52,7 @@
       },
       "data": {
         "raw_preview": "Home - èVRgreen èVRgreen Progetto Chi siamo èVRgreen Week 2025 News Press Contatti Verso una Verona più Verde e Sostenibile Scopri il progetto èVRgreen Week Verso una Verona più Verde e Sostenibile Scopri il progetto èVRgreen Week èVRgreen è un progetto dell’ Università di Verona in collaborazione con il Comune di Verona e l’ Università di Padova per il monitoraggio e l’implementazione del capitale naturale della città. Il progetto èVRgreen mira a trasformare Verona in una città più verde, ricca di biodiversità e con miglioramenti nel benessere psicofisico dei cittadini. Questa iniziativa è pr",
-        "fetched_at": "2026-01-16T15:43:42.754862+00:00",
+        "fetched_at": "2026-01-16T15:55:05.463859+00:00",
         "url": "https://evrgreen.it/"
       }
     },
@@ -62,7 +62,7 @@
       },
       "data": {
         "raw_preview": "Home - èVRgreen èVRgreen Progetto Chi siamo èVRgreen Week 2025 News Press Contatti Verso una Verona più Verde e Sostenibile Scopri il progetto èVRgreen Week Verso una Verona più Verde e Sostenibile Scopri il progetto èVRgreen Week èVRgreen è un progetto dell’ Università di Verona in collaborazione con il Comune di Verona e l’ Università di Padova per il monitoraggio e l’implementazione del capitale naturale della città. Il progetto èVRgreen mira a trasformare Verona in una città più verde, ricca di biodiversità e con miglioramenti nel benessere psicofisico dei cittadini. Questa iniziativa è pr",
-        "fetched_at": "2026-01-16T15:43:45.409874+00:00",
+        "fetched_at": "2026-01-16T15:55:08.359697+00:00",
         "url": "https://evrgreen.it/"
       }
     },
@@ -71,8 +71,8 @@
         "name": "Montorio"
       },
       "data": {
-        "raw_preview": "Stazione Meteo di Montorio Veronese STAZIONE METEO Montorio Veronese Stazione meteo MAPPA STAZIONI METEO4 PREVISIONI METEOBLUE WEBCAM TIMELAPSE Informazioni Stazione meteo Adesso Dati attuali Viste interattive Grafico interattivo Tabelle interattive Intervallo periodo Rapporti Rapporti Tendenze Tendenze Cronologia MAPPA STAZIONI METEO4 PREVISIONI METEOBLUE WEBCAM TIMELAPSE Informazioni About Montorio Stazione meteo di montorio veronese Davis vantage vue Collegamenti 16/01/2026 16.43 © 2026 Meteotemplate meteotemplate.com Meteotemplate 19.0 Cranberry ONLINE Lingua Icone Temperatura Umidità Pres",
-        "fetched_at": "2026-01-16T15:43:49.947521+00:00",
+        "raw_preview": "Stazione Meteo di Montorio Veronese STAZIONE METEO Montorio Veronese Stazione meteo MAPPA STAZIONI METEO4 PREVISIONI METEOBLUE WEBCAM TIMELAPSE Informazioni Stazione meteo Adesso Dati attuali Viste interattive Grafico interattivo Tabelle interattive Intervallo periodo Rapporti Rapporti Tendenze Tendenze Cronologia MAPPA STAZIONI METEO4 PREVISIONI METEOBLUE WEBCAM TIMELAPSE Informazioni About Montorio Stazione meteo di montorio veronese Davis vantage vue Collegamenti 16/01/2026 16.55 © 2026 Meteotemplate meteotemplate.com Meteotemplate 19.0 Cranberry ONLINE Lingua Icone Temperatura Umidità Pres",
+        "fetched_at": "2026-01-16T15:55:13.388707+00:00",
         "url": "https://www.montorioveronese.it/template/indexDesktop.php"
       }
     },
@@ -82,7 +82,7 @@
       },
       "data": {
         "raw_preview": "Home - èVRgreen èVRgreen Progetto Chi siamo èVRgreen Week 2025 News Press Contatti Verso una Verona più Verde e Sostenibile Scopri il progetto èVRgreen Week Verso una Verona più Verde e Sostenibile Scopri il progetto èVRgreen Week èVRgreen è un progetto dell’ Università di Verona in collaborazione con il Comune di Verona e l’ Università di Padova per il monitoraggio e l’implementazione del capitale naturale della città. Il progetto èVRgreen mira a trasformare Verona in una città più verde, ricca di biodiversità e con miglioramenti nel benessere psicofisico dei cittadini. Questa iniziativa è pr",
-        "fetched_at": "2026-01-16T15:43:52.782508+00:00",
+        "fetched_at": "2026-01-16T15:55:16.399980+00:00",
         "url": "https://evrgreen.it/"
       }
     },
@@ -92,7 +92,7 @@
       },
       "data": {
         "error": "403 Client Error: Forbidden for url: https://www.meteonlinebvvr.altervista.org/",
-        "fetched_at": "2026-01-16T15:43:54.907836+00:00",
+        "fetched_at": "2026-01-16T15:55:19.402295+00:00",
         "url": "https://www.meteonlinebvvr.altervista.org/"
       }
     },
@@ -102,7 +102,7 @@
       },
       "data": {
         "raw_preview": "Home - èVRgreen èVRgreen Progetto Chi siamo èVRgreen Week 2025 News Press Contatti Verso una Verona più Verde e Sostenibile Scopri il progetto èVRgreen Week Verso una Verona più Verde e Sostenibile Scopri il progetto èVRgreen Week èVRgreen è un progetto dell’ Università di Verona in collaborazione con il Comune di Verona e l’ Università di Padova per il monitoraggio e l’implementazione del capitale naturale della città. Il progetto èVRgreen mira a trasformare Verona in una città più verde, ricca di biodiversità e con miglioramenti nel benessere psicofisico dei cittadini. Questa iniziativa è pr",
-        "fetched_at": "2026-01-16T15:43:57.395809+00:00",
+        "fetched_at": "2026-01-16T15:55:22.127189+00:00",
         "url": "https://evrgreen.it/"
       }
     }
