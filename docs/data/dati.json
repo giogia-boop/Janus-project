@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-25T06:11:57.805074+00:00",
+  "generated_at": "2026-03-25T07:16:50.254980+00:00",
   "interval_minutes": 15,
   "stations": {
     "grezzana": {
@@ -8,7 +8,7 @@
       },
       "data": {
         "error": "HTTPSConnectionPool(host='wwwold.arpa.veneto.it', port=443): Max retries exceeded with url: /bollettini/meteo/h24/img12/Mappa_TEMP.htm?x=24060 (Caused by NameResolutionError(\"HTTPSConnection(host='wwwold.arpa.veneto.it', port=443): Failed to resolve 'wwwold.arpa.veneto.it' ([Errno -2] Name or service not known)\"))",
-        "fetched_at": "2026-03-25T06:11:58.287680+00:00",
+        "fetched_at": "2026-03-25T07:16:50.461085+00:00",
         "url": "https://wwwold.arpa.veneto.it/bollettini/meteo/h24/img12/Mappa_TEMP.htm?x=24060"
       }
     },
@@ -18,9 +18,9 @@
       },
       "data": {
         "raw_row": {
-          "col0": "+ 9°COsservatorio Meteorologico diMarzana di Valpantena (VR)HOME PAGEDATI COMPLETIGRAFICIARCHIVIO DATIREPORT MENSILIPREVISIONIMETEO-PROJECT"
+          "col0": "+ 12°COsservatorio Meteorologico diMarzana di Valpantena (VR)HOME PAGEDATI COMPLETIGRAFICIARCHIVIO DATIREPORT MENSILIPREVISIONIMETEO-PROJECT"
         },
-        "fetched_at": "2026-03-25T06:12:02.119854+00:00",
+        "fetched_at": "2026-03-25T07:16:53.113400+00:00",
         "url": "https://stazioni.meteoproject.it/dati/marzana/"
       }
     },
@@ -30,9 +30,9 @@
       },
       "data": {
         "raw_row": {
-          "col0": "+ 9°COsservatorio Meteorologico diVerona - Torricelle (VR)HOME PAGEDATI COMPLETIGRAFICIARCHIVIO DATIREPORT MENSILIPREVISIONIMETEO-PROJECT"
+          "col0": "+ 12°COsservatorio Meteorologico diVerona - Torricelle (VR)HOME PAGEDATI COMPLETIGRAFICIARCHIVIO DATIREPORT MENSILIPREVISIONIMETEO-PROJECT"
         },
-        "fetched_at": "2026-03-25T06:12:05.170401+00:00",
+        "fetched_at": "2026-03-25T07:16:55.765562+00:00",
         "url": "https://stazioni.meteoproject.it/dati/torricelle/"
       }
     },
@@ -42,7 +42,7 @@
       },
       "data": {
         "error": "HTTPSConnectionPool(host='evrgreen.it', port=443): Read timed out. (read timeout=12)",
-        "fetched_at": "2026-03-25T06:12:19.274558+00:00",
+        "fetched_at": "2026-03-25T07:17:09.688955+00:00",
         "url": "https://evrgreen.it/"
       }
     },
@@ -52,7 +52,7 @@
       },
       "data": {
         "raw_preview": "Home - èVRgreen èVRgreen Progetto Chi siamo èVRgreen Week 2025 News Press Contatti Verso una Verona più Verde e Sostenibile Scopri il progetto èVRgreen Week Verso una Verona più Verde e Sostenibile Scopri il progetto èVRgreen Week èVRgreen è un progetto dell’ Università di Verona in collaborazione con il Comune di Verona e l’ Università di Padova per il monitoraggio e l’implementazione del capitale naturale della città. Il progetto èVRgreen mira a trasformare Verona in una città più verde, ricca di biodiversità e con miglioramenti nel benessere psicofisico dei cittadini. Questa iniziativa è pr",
-        "fetched_at": "2026-03-25T06:12:23.460933+00:00",
+        "fetched_at": "2026-03-25T07:17:18.666694+00:00",
         "url": "https://evrgreen.it/"
       }
     },
@@ -62,7 +62,7 @@
       },
       "data": {
         "raw_preview": "Home - èVRgreen èVRgreen Progetto Chi siamo èVRgreen Week 2025 News Press Contatti Verso una Verona più Verde e Sostenibile Scopri il progetto èVRgreen Week Verso una Verona più Verde e Sostenibile Scopri il progetto èVRgreen Week èVRgreen è un progetto dell’ Università di Verona in collaborazione con il Comune di Verona e l’ Università di Padova per il monitoraggio e l’implementazione del capitale naturale della città. Il progetto èVRgreen mira a trasformare Verona in una città più verde, ricca di biodiversità e con miglioramenti nel benessere psicofisico dei cittadini. Questa iniziativa è pr",
-        "fetched_at": "2026-03-25T06:12:26.595549+00:00",
+        "fetched_at": "2026-03-25T07:17:21.196345+00:00",
         "url": "https://evrgreen.it/"
       }
     },
@@ -72,7 +72,7 @@
       },
       "data": {
         "error": "HTTPSConnectionPool(host='www.montorioveronese.it', port=443): Read timed out. (read timeout=12)",
-        "fetched_at": "2026-03-25T06:12:40.712008+00:00",
+        "fetched_at": "2026-03-25T07:17:35.163494+00:00",
         "url": "https://www.montorioveronese.it/template/indexDesktop.php"
       }
     },
@@ -82,7 +82,7 @@
       },
       "data": {
         "raw_preview": "Home - èVRgreen èVRgreen Progetto Chi siamo èVRgreen Week 2025 News Press Contatti Verso una Verona più Verde e Sostenibile Scopri il progetto èVRgreen Week Verso una Verona più Verde e Sostenibile Scopri il progetto èVRgreen Week èVRgreen è un progetto dell’ Università di Verona in collaborazione con il Comune di Verona e l’ Università di Padova per il monitoraggio e l’implementazione del capitale naturale della città. Il progetto èVRgreen mira a trasformare Verona in una città più verde, ricca di biodiversità e con miglioramenti nel benessere psicofisico dei cittadini. Questa iniziativa è pr",
-        "fetched_at": "2026-03-25T06:12:43.902531+00:00",
+        "fetched_at": "2026-03-25T07:17:37.907664+00:00",
         "url": "https://evrgreen.it/"
       }
     },
@@ -92,7 +92,7 @@
       },
       "data": {
         "error": "403 Client Error: Forbidden for url: https://www.meteonlinebvvr.altervista.org/",
-        "fetched_at": "2026-03-25T06:12:46.169834+00:00",
+        "fetched_at": "2026-03-25T07:17:40.647707+00:00",
         "url": "https://www.meteonlinebvvr.altervista.org/"
       }
     },
@@ -102,7 +102,7 @@
       },
       "data": {
         "raw_preview": "Home - èVRgreen èVRgreen Progetto Chi siamo èVRgreen Week 2025 News Press Contatti Verso una Verona più Verde e Sostenibile Scopri il progetto èVRgreen Week Verso una Verona più Verde e Sostenibile Scopri il progetto èVRgreen Week èVRgreen è un progetto dell’ Università di Verona in collaborazione con il Comune di Verona e l’ Università di Padova per il monitoraggio e l’implementazione del capitale naturale della città. Il progetto èVRgreen mira a trasformare Verona in una città più verde, ricca di biodiversità e con miglioramenti nel benessere psicofisico dei cittadini. Questa iniziativa è pr",
-        "fetched_at": "2026-03-25T06:12:49.564656+00:00",
+        "fetched_at": "2026-03-25T07:17:43.361198+00:00",
         "url": "https://evrgreen.it/"
       }
     }
